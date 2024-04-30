@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/index.js" defer></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="a finance tracker to keep track of your paychecks and expenses"
+    />
+    <meta
+      name="keywords"
+      content="finance, money, cash, bills, pay, paycheck"
+    />
+    <meta name="author" content="Justin McDonald" />
+    <title>Finance Tracker</title>
+  </head>
+  <body class="container">
+    <div class="page">
+      <aside class="sidebar">
+        <div class="sidebar__profile">
+          <img
+            src="./images/bjtodd.png"
+            alt="profile picture"
+            class="sidebar__profile-pic"
+          />
+          <h1 class="sidebar__profile-name">Benjamin Toddler</h1>
+        </div>
+        <nav class="sidebar__navigation">
+          <ul class="sidebar__navigation-links">
+            <li
+              class="sidebar__navigation-link sidebar__navigation-link_active"
+            >
+              <img
+                src="./images/home.svg"
+                alt="home icon"
+                class="sidebar__icon"
+              />
+              <a href="#" class="sidebar__text">Home</a>
+            </li>
+            <li class="sidebar__navigation-link">
+              <img
+                src="./images/credit-card.svg"
+                alt="Purchases icon"
+                class="sidebar__icon"
+              />
+              <a href="#" class="sidebar__text">Purchases</a>
+            </li>
+            <li class="sidebar__navigation-link">
+              <img
+                src="./images/money.svg"
+                alt="Pay icon"
+                class="sidebar__icon"
+              />
+              <a href="#" class="sidebar__text">Pay</a>
+            </li>
+          </ul>
+        </nav>
+        <img src="./images/logo.png" alt="logo" class="sidebar__logo" />
+      </aside>
+      <main class="content">
+        <section class="paycheck content__block">
+          <div class="content__header">
+            <h2 class="content__header-text">Your current paycheck</h2>
+            <div class="content__header-divider"></div>
+          </div>
+          <div class="content__body">
+            <h3 class="paycheck__amount"><span>$</span>100.00</h3>
+          </div>
+        </section>
+        <section class="recent-purchases content__block">
+          <div class="content__header">
+            <h2 class="content__header-text">Recent Purchases</h2>
+            <div class="content__header-divider"></div>
+          </div>
+        </section>
+        <section class="quick-access content__block">
+          <div class="content__header">
+            <h2 class="content__header-text">Quick Access</h2>
+            <div class="content__header-divider"></div>
+          </div>
+        </section>
+        <section class="coming-soon content__block">
+          <div class="content__header">
+            <h2 class="content__header-text">Coming Soon</h2>
+            <div class="content__header-divider"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
