@@ -4,16 +4,16 @@
 
 
 const initialMoney = {
-  'thursday': 100,
-  'friday': 200,
-  'monday': 300,
-  'tuesday': 400,
-  'wednesday': 500,
-  'thursday2': 600,
-  'friday2': 700,
-  'monday2': 800,
-  'tuesday2': 900,
-  'wednesday2': 1000,
+  'thursday': 304,
+  'friday': 150,
+  'monday': 118,
+  'tuesday': 450,
+  'wednesday': 207,
+  'thursday2': 387,
+  'friday2': 288,
+  'monday2': 211,
+  'tuesday2': 240,
+  'wednesday2': 300,
 }
 
 
@@ -93,4 +93,4 @@ body.style.position = 'relative';
 /*                        test area                       */
 /* ------------------------------------------------------ */
 console.log(paycheckAmount.textContent)
-paycheckAmount.textContent = `$1235.21`
+paycheckAmount.textContent = `$${removeTaxes(calculatePay(initialMoney))}`
