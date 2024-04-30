@@ -1,4 +1,13 @@
 /* ------------------------------------------------------ */
+/*                          tasks                         */
+/* ------------------------------------------------------ */
+// add buttons for done, and cancel in the pay form
+// orgainze file structure for flat BEM
+// create modal for new expense form
+// implement functionality for adding items to the expenses page
+// implement functionality for updating the recent expenses with last 5 expenses
+
+/* ------------------------------------------------------ */
 /*                   set initial monies                   */
 /* ------------------------------------------------------ */
 
