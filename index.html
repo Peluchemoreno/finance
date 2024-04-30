@@ -18,7 +18,496 @@
     <meta name="author" content="Justin McDonald" />
     <title>Finance Tracker</title>
   </head>
-  <body class="container">
+  <body class="container container_modal-opened">
+    <div class="pay-period-modal">
+      <img
+        src="./images/close.svg"
+        alt=""
+        class="pay-period-modal__close-button modal__close-button"
+      />
+      <div class="pay-period-modal__container">
+        <div class="pay-period-modal__header">
+          <h2 class="pay-period-modal__title">Your Pay Period</h2>
+        </div>
+        <form
+          name="payPeriod"
+          id="payPeriodForm"
+          class="pay-period-modal__form"
+        >
+          <label class="pay-period-modal__label" for="thursday">
+            Thursday
+            <input
+              type="text"
+              name="thursday"
+              id="thursday"
+              class="pay-period__input"
+              placeholder="$"
+            /> </label
+          ><label class="pay-period-modal__label" for="friday">
+            Friday
+            <input
+              type="text"
+              name="friday"
+              id="friday"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="monday">
+            Monday
+            <input
+              type="text"
+              name="monday"
+              id="monday"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="Tuesday">
+            Tuesday
+            <input
+              type="text"
+              name="Tuesday"
+              id="Tuesday"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="wednesday">
+            Wednesday
+            <input
+              type="text"
+              name="wednesday"
+              id="wednesday"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="Thursday2">
+            Thursday
+            <input
+              type="text"
+              name="Thursday2"
+              id="Thursday2"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="friday2">
+            Friday
+            <input
+              type="text"
+              name="friday2"
+              id="friday2"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="monday2">
+            Monday
+            <input
+              type="text"
+              name="monday2"
+              id="monday2"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="tuesday2">
+            Tuesday
+            <input
+              type="text"
+              name="tuesday2"
+              id="tuesday2"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+          <label class="pay-period-modal__label" for="wednesday2">
+            Wednesday
+            <input
+              type="text"
+              name="wednesday2"
+              id="wednesday2"
+              class="pay-period__input"
+              placeholder="$"
+            />
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="purchases-modal">
+      <img
+        src="./images/close.svg"
+        alt=""
+        class="purchases-modal__close-button"
+      />
+      <div class="purchases-modal__container">
+        <div class="purchases-modal__header">
+          <h2 class="purchases-modal__title">Expenses</h2>
+          <button class="purchases-modal__button">+New expense</button>
+        </div>
+        <div class="purchases-modal__list-header">
+          <p
+            class="purchases-modal__list-header-text purchases-modal__list-header-text_category"
+          >
+            Category
+          </p>
+          <p
+            class="purchases-modal__list-header-text purchases-modal__list-header-text_merchant"
+          >
+            Merchant
+          </p>
+          <p
+            class="purchases-modal__list-header-text purchases-modal__list-header-text_amount"
+          >
+            Amount
+          </p>
+        </div>
+        <ul class="purchases-modal__list">
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+          <li class="purchases-modal__list-item">
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
+            >
+              Office Supplies
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
+            >
+              Office Depot
+            </p>
+            <p
+              class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+            >
+              $12.34
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="page">
       <div class="page__mobile-profile">
         <img
@@ -45,7 +534,7 @@
         <nav class="sidebar__navigation">
           <ul class="sidebar__navigation-links">
             <li
-              class="sidebar__navigation-link sidebar__navigation-link_active"
+              class="sidebar__navigation-link sidebar__navigation-link_active sidebar__navigation-link_home"
             >
               <img
                 src="./images/home.svg"
@@ -54,7 +543,9 @@
               />
               <a href="#" class="sidebar__text">Home</a>
             </li>
-            <li class="sidebar__navigation-link">
+            <li
+              class="sidebar__navigation-link sidebar__navigation-link_purchases"
+            >
               <img
                 src="./images/credit-card.svg"
                 alt="Purchases icon"
@@ -62,7 +553,7 @@
               />
               <a href="#" class="sidebar__text">Purchases</a>
             </li>
-            <li class="sidebar__navigation-link">
+            <li class="sidebar__navigation-link sidebar__navigation-link_pay">
               <img
                 src="./images/money.svg"
                 alt="Pay icon"
@@ -221,7 +712,7 @@
                 alt="new purchase"
                 class="quick-access__icon quick-access__icon_purchase"
               />
-              <p class="quick-access__button-text">+New Purchase</p>
+              <p class="quick-access__button-text">+New Expense</p>
             </article>
             <article class="quick-access__button">
               <img
@@ -229,7 +720,7 @@
                 alt="new purchase"
                 class="quick-access__icon quick-access__icon_coming-soon"
               />
-              <p class="quick-access__button-text">+New Purchase</p>
+              <p class="quick-access__button-text">+New Expense</p>
             </article>
             <article class="quick-access__button">
               <img
@@ -237,7 +728,7 @@
                 alt="new purchase"
                 class="quick-access__icon quick-access__icon_coming-soon"
               />
-              <p class="quick-access__button-text">+New Purchase</p>
+              <p class="quick-access__button-text">+New Expense</p>
             </article>
           </div>
         </section>
@@ -253,21 +744,21 @@
           <img
             src="./images/home.svg"
             alt="home icon"
-            class="sidebar__icon page__mobile-navigation-icon"
+            class="sidebar__icon page__mobile-navigation-icon page__mobile-navigation-icon_home"
           />
         </a>
         <a href="#">
           <img
             src="./images/credit-card.svg"
-            alt="home icon"
-            class="sidebar__icon page__mobile-navigation-icon"
+            alt="purchases icon"
+            class="sidebar__icon page__mobile-navigation-icon page__mobile-navigation-icon_purchases"
           />
         </a>
         <a href="#">
           <img
             src="./images/money.svg"
             alt="Pay icon"
-            class="sidebar__icon page__mobile-navigation-icon"
+            class="sidebar__icon page__mobile-navigation-icon page__mobile-navigation-icon_pay"
           />
         </a>
       </div>

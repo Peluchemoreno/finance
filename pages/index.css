@@ -8,11 +8,13 @@ html {
 }
 
 
+* {
+  font-family: 'Inter';
+}
 
 .page {
   height: 100vh;
   color: #f9f8f8;
-  font-family: 'Inter';
   max-width: 1280px;
   min-width: 422px;
   margin: 0 auto;
@@ -269,20 +271,198 @@ html {
   margin-right: 16px;
 }
 
+.purchases-modal{
+  display: none;
+}
+
+.purchases-modal_visible{
+  display: flex;
+  background: #2E3130;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height:100dvh;
+  overflow:hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchases-modal__container{
+  width: 80%;
+  height: 90%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  /* border: 1px solid red; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.purchases-modal {
+  position: absolute;
+}
+
+.purchases-modal__header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f9f8f8;
+  padding-bottom: 20px;
+}
+
+.purchases-modal__button{
+  background-color: #00bfb3;
+  border: none;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color .1s ease-in-out, color .1s ease-in-out;
+}
+
+.purchases-modal__button:hover {
+  background-color: #ca054d;
+  color: white;
+}
+
+.purchases-modal__close-button {
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.purchases-modal__title {
+  color: white;
+  margin: 0;
+  font-size: 30px;
+}
+
+.purchases-modal__list-header {
+  color: white;
+  display: flex;
+}
+
+.purchases-modal__list {
+  padding: 0;
+  list-style-type: none;
+ 
+}
+
+.purchases-modal__list-item{
+  background-color: #2E3130;
+  display: flex;
+  margin-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.purchases-modal__list-item-text {
+  margin: 0;
+  color: white;
+  font-size: 10px;
+}
+
+.purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+  margin-right: 190px;
+  padding-left: 10px;
+}
+
+.purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+  margin-left: auto;
+  padding-right: 10px;
+}
+
+
+.pay-period-modal {
+  position: absolute;
+  display: none;
+}
+
+.pay-period-modal_visible {
+  display: flex;
+  background: #2E3130;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height:100dvh;
+  overflow:hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-period-modal__container {
+  width: 80%;
+  height: 90%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.pay-period-modal__header {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.pay-period-modal__form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+  margin-top: 20px;
+  height: 80%;
+}
+
+.pay-period-modal__label{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.pay-period-modal__close-button {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+}
+
+.pay-period__input {
+  text-align: right;
+}
+
+
+/* ------------------------------------------------------ */
+/*                      media queries                     */
+/* ------------------------------------------------------ */
+
+
 @media screen and (width < 1159px){
+  
+  
+  
   .sidebar, .sidebar__profile {
     width: 200px;
   }
-
+  
   .sidebar__navigation-link {
     width: 150px;
   }
-
+  
   .sidebar__navigation-links {
     margin: 0;
     width: 200px;
   }
-
+  
 }
 
 
@@ -299,10 +479,11 @@ html {
   .coming-soon {
     grid-row: 6 / span 3;
   }
+  
 }
 
 @media screen and (width < 993px){
- .content{
+  .content{
   gap: 5px;
  }
 
@@ -321,6 +502,16 @@ html {
 
 .paycheck {
   grid-column-end: span 2;
+}
+
+.purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+  margin-right: 90px;
+  padding-left: 10px;
+}
+
+.purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+  margin-left: auto;
+  padding-right: 10px;
 }
 }
 
@@ -341,7 +532,7 @@ html {
 
 .page__mobile-navigation {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: #2E3130;
   position: sticky;
   bottom: 0;
@@ -390,6 +581,35 @@ html {
   width: 100px;
   display: inline-block;
 }
+body {
+  position: fixed;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 4;
+}
+
+.purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+  margin-right: 60px;
+  padding-left: 10px;
+}
+
+.purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+  margin-left: auto;
+  padding-right: 10px;
+}
+
+.pay-period__input {
+  width: 35%;
+}
+
+.pay-period-modal__close-button{
+  top: 10px;
+  right: 10px;
+}
 
 }
 
@@ -408,4 +628,5 @@ html {
     padding: 0;
     padding: 10px 10px;
   }
+ 
 }
