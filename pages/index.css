@@ -17,6 +17,7 @@ html {
   color: #f9f8f8;
   max-width: 1280px;
   min-width: 422px;
+  min-height: 600px;
   margin: 0 auto;
   display: flex;
   letter-spacing: 1px;
