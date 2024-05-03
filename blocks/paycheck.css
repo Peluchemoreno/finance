@@ -1,0 +1,20 @@
+.paycheck {
+  grid-row: 1 / 3;
+}
+
+.paycheck__amount {
+  margin: 0;
+  font-size: 48px;
+}
+
+@media screen and (height < 600px){
+  .paycheck__amount {
+    font-size: 40px;
+  }
+}
+
+@media screen and (width < 993px){
+  .paycheck {
+    grid-column-end: span 2;
+  }
+}

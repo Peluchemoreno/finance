@@ -1,0 +1,128 @@
+.purchases-modal{
+  display: none;
+}
+
+.purchases-modal_visible{
+  display: flex;
+  background: #2E3130;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height:100dvh;
+  overflow:hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchases-modal__container{
+  width: 80%;
+  height: 90%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  /* border: 1px solid red; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.purchases-modal {
+  position: absolute;
+}
+
+.purchases-modal__header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f9f8f8;
+  padding-bottom: 20px;
+}
+
+.purchases-modal__button{
+  background-color: #00bfb3;
+  border: none;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color .1s ease-in-out, color .1s ease-in-out;
+}
+
+.purchases-modal__button:hover {
+  background-color: #ca054d;
+  color: white;
+}
+
+.purchases-modal__close-button {
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.purchases-modal__title {
+  color: white;
+  margin: 0;
+  font-size: 30px;
+}
+
+.purchases-modal__list-header {
+  color: white;
+  display: flex;
+}
+
+.purchases-modal__list {
+  padding: 0;
+  list-style-type: none;
+ 
+}
+
+.purchases-modal__list-item{
+  background-color: #2E3130;
+  display: flex;
+  margin-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.purchases-modal__list-item-text {
+  margin: 0;
+  color: white;
+  font-size: 10px;
+}
+
+.purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+  margin-right: 190px;
+  padding-left: 10px;
+}
+
+.purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+  margin-left: auto;
+  padding-right: 10px;
+}
+
+@media screen and (width < 993px){
+  .purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+    margin-right: 90px;
+    padding-left: 10px;
+  }
+  
+  .purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+    margin-left: auto;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (width < 722px){
+  .purchases-modal__list-header-text_category, .purchases-modal__list-item-text_category {
+    margin-right: 60px;
+    padding-left: 10px;
+  }
+  
+  .purchases-modal__list-header-text_amount, .purchases-modal__list-item-text_amount {
+    margin-left: auto;
+    padding-right: 10px;
+  }
+}

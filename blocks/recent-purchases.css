@@ -1,0 +1,63 @@
+.recent-purchases {
+  grid-row: 1 / 3;
+}
+
+.recent-purchases__header {
+  display: flex;
+  margin-top: 5px;
+}
+
+.recent-purchases__title {
+  font-size: 9px;
+  margin: 0;
+}
+
+.recent-purchases__title_category {
+  width: 124px;
+  margin-left: 16px;
+}
+
+.recent-purchases__purchase_category {
+  padding-left: 16px;
+}
+
+.recent-purchases__title_amount {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.recent-purchases__container {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  margin-bottom: 5px;
+}
+
+.recent-purchases__purchase {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 9px;
+  display: flex;
+}
+
+.recent-purchases__purchase_category {
+  padding: 0;
+  margin-left: 16px;
+  width: 122px; 
+}
+
+.recent-purchases__purchase_merchant {
+  max-width: 146px; 
+}
+
+.recent-purchases__purchase_amount {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+@media screen and (width < 993px){
+  .recent-purchases {
+    grid-row: 3 / span 2;
+    grid-column-end: span 2;
+  }
+}

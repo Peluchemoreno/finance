@@ -1,0 +1,16 @@
+.coming-soon {
+  grid-row: 5 / 9;
+  grid-column: 1 / 3;
+}
+
+@media screen and (height < 600px){
+  .coming-soon {
+    grid-row: 6 / span 3;
+  }
+}
+
+@media screen and (width < 993px){
+  .coming-soon {
+    grid-row: -1 / -3;
+  }
+}

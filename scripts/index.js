@@ -12,18 +12,7 @@
 /* ------------------------------------------------------ */
 
 
-const initialMoney = {
-  'thursday': 304,
-  'friday': 150,
-  'monday': 118,
-  'tuesday': 450,
-  'wednesday': 207,
-  'thursday2': 387,
-  'friday2': 288,
-  'monday2': 211,
-  'tuesday2': 240,
-  'wednesday2': 300,
-}
+let initialMoney = []
 
 
 /* ------------------------------------------------------ */
@@ -41,6 +30,9 @@ const mobilePurchasesNavBtn = document.querySelector('.page__mobile-navigation-i
 const body = document.querySelector('body')
 const paycheckAmount = document.querySelector('.paycheck__amount')
 const modals = document.querySelectorAll('.modal')
+const payPeriodForm = document.forms['payPeriodForm'];
+const payPeriodCancelButton = document.querySelector('.pay-period-modal__cancel-button')
+
 
 
 /* ------------------------------------------------------ */
@@ -74,17 +66,41 @@ mobilePayPeriodNavBtn.addEventListener('click', ()=>{
   payPeriodModal.classList.add('pay-period-modal_visible')
 })
 
+
+payPeriodForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  initialMoney = []
+  Array.from(payPeriodForm.elements).forEach(element => {
+    if (element.type === 'text'){
+      initialMoney.push(parseInt(element.value))
+    }
+  })
+  sum = initialMoney.reduce((a, b) => {
+    return a += b
+  }, 0)
+  paycheckAmount.textContent = `$${removeTaxes(calculatePay(initialMoney))}`
+
+  payPeriodModal.classList.remove('pay-period-modal_visible')
+  
+  Array.from(payPeriodForm.elements).forEach(element => {
+    if (element.type === 'text'){
+      element.value = 0
+    }
+  })
+})
+
+payPeriodCancelButton.addEventListener('click', ()=>{
+  payPeriodModal.classList.remove('pay-period-modal_visible')
+})
 /* ------------------------------------------------------ */
 /*                    define functions                    */
 /* ------------------------------------------------------ */
 
 function calculatePay(obj){
-  let sum = 0
-  Object.keys(obj).forEach(key => {
-    sum += obj[key]
-  })
-  console.log(sum)
-  return sum
+  
+  return obj.reduce((a, b) => {
+    return a += b
+  }, 0)
 }
 
 function removeTaxes(number){
@@ -101,5 +117,4 @@ body.style.position = 'relative';
 /* ------------------------------------------------------ */
 /*                        test area                       */
 /* ------------------------------------------------------ */
-console.log(paycheckAmount.textContent)
-paycheckAmount.textContent = `$${removeTaxes(calculatePay(initialMoney))}`
+
