@@ -1,5 +1,6 @@
 import Expense from "../components/Expense.js";
-
+import RecentExpense from "../components/RecentExpense.js";
+import { purchases } from '../components/constants.js';
 /* ------------------------------------------------------ */
 /*                          tasks                         */
 /* ------------------------------------------------------ */
@@ -34,6 +35,7 @@ const body = document.querySelector('body')
 const paycheckAmount = document.querySelector('.paycheck__amount')
 const payPeriodForm = document.forms['payPeriodForm'];
 const payPeriodCancelButton = document.querySelector('.pay-period-modal__cancel-button')
+const recentPurchasesSection = document.querySelector('.recent-purchases__container')
 
 
 
@@ -119,9 +121,18 @@ function removeTaxes(number){
 /* ------------------------------------------------------ */
 body.style.position = 'relative';
 
-const testExpense = new Expense('Office Supplies', 'Office Depot', 10.99)
+function generateExpense(classInstance, data){
+  return new classInstance(data)
+}
 
-expenseSection.prepend(testExpense.generateExpenseRow())
+purchases.forEach(purchase => {
+  const newPurchase = generateExpense(Expense, purchase)
+  expenseSection.prepend(newPurchase.generateExpenseRow())
+
+  const recentPurchase = generateExpense(RecentExpense, purchase)
+  recentPurchasesSection.prepend(recentPurchase.generateExpenseRow())
+})
+
 
 /* ------------------------------------------------------ */
 /*                        test area                       */

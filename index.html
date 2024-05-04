@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
     <script src="./scripts/index.js" type="module" defer></script>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <meta
       name="description"
       content="a finance tracker to keep track of your paychecks and expenses"
@@ -268,110 +268,7 @@
               Amount
             </h3>
           </div>
-          <div class="recent-purchases__container">
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Office Supplies
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Office Depot
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $12.34
-              </p>
-            </article>
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Rent
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Apartment Complex
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $1423.34
-              </p>
-            </article>
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Office Supplies
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Office Depot
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $12.34
-              </p>
-            </article>
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Office Supplies
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Office Depot
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $12.34
-              </p>
-            </article>
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Office Supplies
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Office Depot
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $12.34
-              </p>
-            </article>
-            <article class="recent-purchases__purchase">
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_category"
-              >
-                Office Supplies
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_merchant"
-              >
-                Office Depot
-              </p>
-              <p
-                class="recent-purchases__purchase recent-purchases__purchase_amount"
-              >
-                $12.34
-              </p>
-            </article>
-          </div>
+          <ul class="recent-purchases__container"></ul>
         </section>
         <section class="quick-access content__block">
           <div class="content__header">
@@ -440,18 +337,29 @@
       <li class="purchases-modal__list-item">
         <p
           class="purchases-modal__list-item-text purchases-modal__list-item-text_category"
-        >
-          Office Supplies
-        </p>
+        ></p>
         <p
           class="purchases-modal__list-item-text purchases-modal__list-item-text_merchant"
-        >
-          Office Depot
-        </p>
+        ></p>
         <p
           class="purchases-modal__list-item-text purchases-modal__list-item-text_amount"
+        ></p>
+      </li>
+    </template>
+    <template class="recent-expense__template">
+      <li class="recent-purchases__purchase">
+        <p
+          class="recent-purchases__purchase recent-purchases__purchase_category"
         >
-          $12.34
+          Office depot
+        </p>
+        <p
+          class="recent-purchases__purchase recent-purchases__purchase_merchant"
+        >
+          test merch
+        </p>
+        <p class="recent-purchases__purchase recent-purchases__purchase_amount">
+          $100
         </p>
       </li>
     </template>
