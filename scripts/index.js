@@ -1,3 +1,5 @@
+import Expense from "../components/Expense.js";
+
 /* ------------------------------------------------------ */
 /*                          tasks                         */
 /* ------------------------------------------------------ */
@@ -19,6 +21,7 @@ let initialMoney = []
 /*                    define varialbes                    */
 /* ------------------------------------------------------ */
 
+const expenseSection = document.querySelector('.purchases-modal__list')
 const purchasesModal = document.querySelector('.purchases-modal')
 const payPeriodModal = document.querySelector('.pay-period-modal')
 const purchasesModalCloseBtn = document.querySelector('.purchases-modal__close-button')
@@ -29,7 +32,6 @@ const mobilePayPeriodNavBtn = document.querySelector('.page__mobile-navigation-i
 const mobilePurchasesNavBtn = document.querySelector('.page__mobile-navigation-icon_purchases')
 const body = document.querySelector('body')
 const paycheckAmount = document.querySelector('.paycheck__amount')
-const modals = document.querySelectorAll('.modal')
 const payPeriodForm = document.forms['payPeriodForm'];
 const payPeriodCancelButton = document.querySelector('.pay-period-modal__cancel-button')
 
@@ -69,9 +71,13 @@ mobilePayPeriodNavBtn.addEventListener('click', ()=>{
 
 payPeriodForm.addEventListener('submit', (e)=>{
   e.preventDefault();
+  let sum = 0;
   initialMoney = []
   Array.from(payPeriodForm.elements).forEach(element => {
     if (element.type === 'text'){
+      if (!element.value){
+        element.value = 0
+      }
       initialMoney.push(parseInt(element.value))
     }
   })
@@ -113,6 +119,9 @@ function removeTaxes(number){
 /* ------------------------------------------------------ */
 body.style.position = 'relative';
 
+const testExpense = new Expense('Office Supplies', 'Office Depot', 10.99)
+
+expenseSection.prepend(testExpense.generateExpenseRow())
 
 /* ------------------------------------------------------ */
 /*                        test area                       */
