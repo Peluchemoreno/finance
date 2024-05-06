@@ -93,11 +93,23 @@
 
 .pay-period__input {
   text-align: right;
+  color: white;
+  background-color: #2E3130;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
 }
+
 
 @media screen and (width < 722px){
   .pay-period__input {
     width: 35%;
+    text-align: right;
+    color: white;
+    background-color: #2E3130;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
   }
   
   .pay-period-modal__close-button{

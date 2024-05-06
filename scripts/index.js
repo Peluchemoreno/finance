@@ -1,26 +1,27 @@
 import Expense from "../components/Expense.js";
 import RecentExpense from "../components/RecentExpense.js";
 import { purchases } from '../components/constants.js';
-/* ------------------------------------------------------ */
-/*                          tasks                         */
-/* ------------------------------------------------------ */
-// add buttons for done, and cancel in the pay form
-// orgainze file structure for flat BEM
-// create modal for new expense form
-// implement functionality for adding items to the expenses page
-// implement functionality for updating the recent expenses with last 5 expenses
 
-/* ------------------------------------------------------ */
-/*                   set initial monies                   */
-/* ------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                       tasklist                                       */
+/* ------------------------------------------------------------------------------------ */
+
+// implement functionality for updating the recent expenses with last 5 expenses
+// implement functionality for updating username and profile picture
+// make the data persist by creating api
+// separate all code as per OOP principles
+
+/* ------------------------------------------------------------------------------------ */
+/*                                  set initial monies                                  */
+/* ------------------------------------------------------------------------------------ */
 
 
 let initialMoney = []
 
 
-/* ------------------------------------------------------ */
-/*                    define varialbes                    */
-/* ------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                   define variables                                   */
+/* ------------------------------------------------------------------------------------ */
 
 const expenseSection = document.querySelector('.purchases-modal__list')
 const purchasesModal = document.querySelector('.purchases-modal')
@@ -36,12 +37,19 @@ const paycheckAmount = document.querySelector('.paycheck__amount')
 const payPeriodForm = document.forms['payPeriodForm'];
 const payPeriodCancelButton = document.querySelector('.pay-period-modal__cancel-button')
 const recentPurchasesSection = document.querySelector('.recent-purchases__container')
+const newExpenseModal = document.querySelector('.add-expense-modal')
+const addExpenseQuickAccessButton = document.querySelector('.quick-access__button_new-expense')
+const addExpenseButton = document.querySelector('.purchases-modal__button')
+const addExpenseCloseButton = document.querySelector('.add-expense-modal__close-button')
+const addExpenceCancelButton = document.querySelector('.add-expense-modal__button_cancel')
+const page = document.querySelector('.page')
+const newExpenseForm = document.forms["addExpenseForm"]
 
 
 
-/* ------------------------------------------------------ */
-/*                   set event listeners                  */
-/* ------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                  set event listeners                                 */
+/* ------------------------------------------------------------------------------------ */
 
 purchasesModalCloseBtn.addEventListener('click', ()=>{
   purchasesModal.classList.remove('purchases-modal_visible')
@@ -91,7 +99,7 @@ payPeriodForm.addEventListener('submit', (e)=>{
   payPeriodModal.classList.remove('pay-period-modal_visible')
   
   Array.from(payPeriodForm.elements).forEach(element => {
-    if (element.type === 'text'){
+    if (element.nodeName === 'INPUT'){
       element.value = 0
     }
   })
@@ -100,9 +108,56 @@ payPeriodForm.addEventListener('submit', (e)=>{
 payPeriodCancelButton.addEventListener('click', ()=>{
   payPeriodModal.classList.remove('pay-period-modal_visible')
 })
-/* ------------------------------------------------------ */
-/*                    define functions                    */
-/* ------------------------------------------------------ */
+
+addExpenseButton.addEventListener('click', ()=>{
+  purchasesModal.classList.remove('purchases-modal_visible')
+  body.style.position = 'relative'
+  newExpenseModal.classList.add('add-expense-modal_visible')
+})
+
+addExpenseQuickAccessButton.addEventListener('click', ()=>{
+  newExpenseModal.classList.add('add-expense-modal_visible')
+})
+
+addExpenceCancelButton.addEventListener('click', ()=>{
+  body.style.position = 'relative'
+  newExpenseModal.classList.remove('add-expense-modal_visible')
+})
+
+addExpenseCloseButton.addEventListener('click', ()=>{
+  body.style.position = 'relative'
+  newExpenseModal.classList.remove('add-expense-modal_visible')
+})
+
+
+addExpenseForm.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  let inputs = Array.from(newExpenseForm.elements).filter(a => {
+    return a.nodeName === "INPUT"
+  })
+  let inputObj = {}
+  inputs.forEach(input => {
+    if (input.id === 'price'){
+      inputObj[input.id] = parseInt(input.value)
+    } else {
+      inputObj[input.id] = input.value
+    }
+  })
+  
+
+  expenseSection.prepend(generateExpense(Expense, inputObj).generateExpenseRow())
+  recentPurchasesSection.prepend(generateExpense(RecentExpense, inputObj).generateExpenseRow())
+  inputs.forEach(input => {
+    input.value = ''
+  })
+
+  newExpenseModal.classList.remove('add-expense-modal_visible')
+})
+
+
+/* ------------------------------------------------------------------------------------ */
+/*                                   define functions                                   */
+/* ------------------------------------------------------------------------------------ */
 
 function calculatePay(obj){
   
@@ -116,14 +171,16 @@ function removeTaxes(number){
   return solution
 }
 
-/* ------------------------------------------------------ */
-/*                         on load                        */
-/* ------------------------------------------------------ */
-body.style.position = 'relative';
-
 function generateExpense(classInstance, data){
   return new classInstance(data)
 }
+
+/* ------------------------------------------------------------------------------------ */
+/*                                        on load                                       */
+/* ------------------------------------------------------------------------------------ */
+body.style.position = 'relative';
+page.style.overflow = 'scroll';
+
 
 purchases.forEach(purchase => {
   const newPurchase = generateExpense(Expense, purchase)
@@ -133,8 +190,7 @@ purchases.forEach(purchase => {
   recentPurchasesSection.prepend(recentPurchase.generateExpenseRow())
 })
 
-
-/* ------------------------------------------------------ */
-/*                        test area                       */
-/* ------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                       test area                                      */
+/* ------------------------------------------------------------------------------------ */
 

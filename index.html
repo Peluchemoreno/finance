@@ -18,7 +18,72 @@
     <meta name="author" content="Justin McDonald" />
     <title>Finance Tracker</title>
   </head>
-  <body class="container container_modal-opened">
+  <body class="container">
+    <div class="add-expense-modal">
+      <form
+        name="addExpenseForm"
+        id="addExpenseForm"
+        class="add-expense-modal__form"
+      >
+        <img
+          src="./images/close.svg"
+          alt="close modal"
+          class="add-expense-modal__close-button"
+        />
+        <h2 class="add-expense-modal__title">New Expense</h2>
+        <label
+          for="category"
+          class="add-expense-modal__label add-expense-modal__label_category"
+          ><h4 class="add-expense-modal__text add-expense-modal__text_category">
+            Category
+          </h4>
+          <input
+            id="category"
+            type="text"
+            class="add-expense-modal__input add-expense-modal__input_category"
+          />
+        </label>
+        <label
+          for="merchant"
+          class="add-expense-modal__label add-expense-modal__label_merchant"
+          ><h4 class="add-expense-modal__text add-expense-modal__text_merchant">
+            Merchant
+          </h4>
+          <input
+            id="merchant"
+            type="text"
+            class="add-expense-modal__input add-expense-modal__input_merchant"
+          />
+        </label>
+        <label
+          for="price"
+          class="add-expense-modal__label add-expense-modal__label_amount"
+          ><h4 class="add-expense-modal__text add-expense-modal__text_price">
+            Price
+          </h4>
+          <input
+            id="price"
+            type="text"
+            class="add-expense-modal__input add-expense-modal__input_amount"
+            placeholder="$"
+          />
+        </label>
+        <div class="add-expense-modal__buttons">
+          <button
+            type="button"
+            class="add-expense-modal__button add-expense-modal__button_cancel"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="add-expense-modal__button add-expense-modal__button_submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
     <div class="pay-period-modal">
       <img
         src="./images/close.svg"
@@ -276,7 +341,9 @@
             <div class="content__header-divider"></div>
           </div>
           <div class="quick-access__buttons">
-            <article class="quick-access__button">
+            <article
+              class="quick-access__button quick-access__button_new-expense"
+            >
               <img
                 src="./images/credit-card.svg"
                 alt="new purchase"

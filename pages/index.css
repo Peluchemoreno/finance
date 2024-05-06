@@ -8,6 +8,7 @@
 @import url(../blocks/pay-period.css);
 @import url(../blocks/coming-soon.css);
 @import url(../blocks/modal.css);
+@import url(../blocks/add-expense.css);
 
 @font-face {
   font-family: 'Inter';
