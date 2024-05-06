@@ -46,8 +46,6 @@ const addExpenceCancelButton = document.querySelector('.add-expense-modal__butto
 const newExpenseForm = document.forms["addExpenseForm"]
 
 
-
-
 /* ------------------------------------------------------------------------------------ */
 /*                                  instantiate classes                                 */
 /* ------------------------------------------------------------------------------------ */
@@ -84,7 +82,7 @@ payPeriodNavBtn.addEventListener('click', ()=>{
 })
 
 mobilePayPeriodNavBtn.addEventListener('click', ()=>{
-  // payPeriodModal.classList.add('pay-period-modal_visible')
+  payPeriodModal.classList.add('pay-period-modal_visible')
 })
 
 
