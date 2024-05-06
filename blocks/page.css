@@ -7,17 +7,10 @@
   margin: 0 auto;
   display: flex;
   letter-spacing: 1px;
+  overflow: hidden;
 }
 
-.page__mobile-profile {
-  display: none;
-}
-
-.page__mobile-navigation {
-  display: none;
-}
-
-.page__mobile-profile-image {
+.page__mobile-profile, .page__mobile-navigation, .page__mobile-profile-image {
   display: none;
 }
 

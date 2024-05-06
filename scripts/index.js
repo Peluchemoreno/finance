@@ -1,6 +1,7 @@
 import Expense from "../components/Expense.js";
 import RecentExpense from "../components/RecentExpense.js";
 import { purchases } from '../components/constants.js';
+import Modal from "../components/Modal.js";
 
 /* ------------------------------------------------------------------------------------ */
 /*                                       tasklist                                       */
@@ -42,8 +43,15 @@ const addExpenseQuickAccessButton = document.querySelector('.quick-access__butto
 const addExpenseButton = document.querySelector('.purchases-modal__button')
 const addExpenseCloseButton = document.querySelector('.add-expense-modal__close-button')
 const addExpenceCancelButton = document.querySelector('.add-expense-modal__button_cancel')
-const page = document.querySelector('.page')
 const newExpenseForm = document.forms["addExpenseForm"]
+
+
+
+
+/* ------------------------------------------------------------------------------------ */
+/*                                  instantiate classes                                 */
+/* ------------------------------------------------------------------------------------ */
+const payPeriodModalClass = new Modal('pay-period-modal')
 
 
 
@@ -57,7 +65,7 @@ purchasesModalCloseBtn.addEventListener('click', ()=>{
 })
 
 payPeriodModalCloseBtn.addEventListener('click', ()=>{
-  payPeriodModal.classList.remove('pay-period-modal_visible')
+  payPeriodModalClass.close()
 })
 
 purchasesNavBtn.addEventListener('click', ()=>{
@@ -71,11 +79,12 @@ mobilePurchasesNavBtn.addEventListener('click', ()=>{
 })
 
 payPeriodNavBtn.addEventListener('click', ()=>{
-  payPeriodModal.classList.add('pay-period-modal_visible')
+  payPeriodModalClass.open()
+
 })
 
 mobilePayPeriodNavBtn.addEventListener('click', ()=>{
-  payPeriodModal.classList.add('pay-period-modal_visible')
+  // payPeriodModal.classList.add('pay-period-modal_visible')
 })
 
 
@@ -106,7 +115,7 @@ payPeriodForm.addEventListener('submit', (e)=>{
 })
 
 payPeriodCancelButton.addEventListener('click', ()=>{
-  payPeriodModal.classList.remove('pay-period-modal_visible')
+ payPeriodModalClass.close()
 })
 
 addExpenseButton.addEventListener('click', ()=>{
@@ -179,7 +188,7 @@ function generateExpense(classInstance, data){
 /*                                        on load                                       */
 /* ------------------------------------------------------------------------------------ */
 body.style.position = 'relative';
-page.style.overflow = 'scroll';
+// page.style.overflow = 'scroll';
 
 
 purchases.forEach(purchase => {
